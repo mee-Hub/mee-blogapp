@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update]
 
   def index
-    raise StandardError
+    # raise StandardError
     @articles = Article.all
   end
 

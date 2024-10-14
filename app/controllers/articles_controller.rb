@@ -1,14 +1,14 @@
-# frozen_string_literal: true
-
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[show edit update]
+  before_action :set_article, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     # raise StandardError
     @articles = Article.all
   end
 
-  def show; end
+  def show
+  end
 
   def new
     @article = Article.new
